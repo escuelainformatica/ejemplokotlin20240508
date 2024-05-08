@@ -12,7 +12,7 @@ import androidx.navigation.NavHostController
 fun FilaProducto(navController: NavHostController, prod: String, fila: Int) { // navegacion, nombre producto, id producto
     Row() {
         Text(prod)
-        ElevatedButton(onClick = { navController.navigate("screen3/${fila}") }) {
+        ElevatedButton(onClick = {navController.navigate("pantallaeditar/${fila}") }) {
             Text("editar #${fila}")
         }
     }

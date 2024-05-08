@@ -8,6 +8,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import cl.eftec.app20240508.paginas.pagina1
 import cl.eftec.app20240508.paginas.pagina2
+import cl.eftec.app20240508.paginas.pagina3
 
 @Composable
 fun Navegacion() {
@@ -20,6 +21,16 @@ fun Navegacion() {
             arguments = listOf(navArgument("name") { type = NavType.StringType })
         ) { backStackEntry ->
             pagina2(
+                navController,
+                productoVM,
+                name = backStackEntry.arguments?.getString("name") ?: ""
+            )
+        }
+        composable(
+            route = "pantallaeditar/{name}",
+            arguments = listOf(navArgument("name") { type = NavType.StringType })
+        ) { backStackEntry ->
+            pagina3(
                 navController,
                 productoVM,
                 name = backStackEntry.arguments?.getString("name") ?: ""

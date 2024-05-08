@@ -11,5 +11,8 @@ class ProductoVM {
     fun agregar() {
         productos.add(producto)
     }
+    fun editar(index:Int) {
+        productos[index]=producto
+    }
 
 }
